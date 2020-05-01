@@ -38,9 +38,9 @@ app.get('/posts', async (req, res) => {
 })
 
 app.get('/posts/:id', async (req, res) => {
-        const id = parseInt(req.params.id)
-        const post = posts.filter(post => post.id === id)[0]
-        res.json(post)
+    const id = parseInt(req.params.id)
+    const post = posts.filter(post => post.id === id)[0]
+    res.json(post)
 })
 
 app.post('/posts', (req, res) => {
