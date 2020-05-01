@@ -15,13 +15,13 @@ app.listen(PORT, () => {
 const posts =
     [
         {
-            id: 1,
+            id: "s8c5ee5c-98dc-62a6-b284-0da231e3abb6",
             title: "Lorem Ipsum Dolor",
             imgURL: "https://www.unsplash.com/92hd.png",
             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             author: "Bruno Galvao"
         }, {
-            id: 2,
+            id: "n8c5ee5c-98dc-62a6-b284-0da231e3abb6",
             title: "Ut Enim Ad Minim",
             imgURL: "https://www.unsplash.com/64ea.png",
             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -38,7 +38,7 @@ app.get('/posts', async (req, res) => {
 })
 
 app.get('/posts/:id', async (req, res) => {
-    const id = parseInt(req.params.id)
+    const id = req.params.id
     const post = posts.filter(post => post.id === id)[0]
     res.json(post)
 })
@@ -50,7 +50,7 @@ app.post('/posts', (req, res) => {
 })
 
 app.put('/posts/:id', async (req, res) => {
-    const id = parseInt(req.params.id)
+    const id = req.params.id
     const postIndex = posts.findIndex(post => post.id === id)
     const post = { ...posts[postIndex], ...req.body }
     posts.splice(postIndex, 1, post)
