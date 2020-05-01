@@ -2,7 +2,7 @@
 
 ### Let's Build an Express API!
 
-Your task is to build a small, light-weight server that can create, read, update, and delete posts using express
+Your task is to build a small, light-weight server that can create, read, update, and delete posts using express.
 
 Instead of storing your posts in a json file, you can store it in an array in your server.js file.
 
