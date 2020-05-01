@@ -50,7 +50,7 @@ app.post('/posts', (req, res) => {
 })
 
 app.put('/posts/:id', async (req, res) => {
-    const id = req.params.id
+    const id = parseInt(req.params.id)
     const postIndex = posts.findIndex(post => post.id === id)
     const post = { ...posts[postIndex], ...req.body }
     posts.splice(postIndex, 1, post)
